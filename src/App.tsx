@@ -3,9 +3,9 @@ import Navbar from "./components/Navbar/Navbar";
 
 const App: React.FC<{}> = () => {
   return (
-    <div className="">
+    <div className="body bg-primary text-white w-full overflow-hidden font-poppins">
       <Navbar />
-      <div className="App text-3xl font-bold">Hello</div>
+      <div className="App text-3xl font-bold">Body</div>
       <Footer />
     </div>
   );
