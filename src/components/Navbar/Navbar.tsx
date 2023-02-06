@@ -32,8 +32,8 @@ const Navbar: React.FC<{}> = () => {
 
         {/* Navbar Links (expanded) */}
         <div className="sm:flex hidden">
-          {links.map((link) => (
-            <NavLink link={link} />
+          {links.map((link, i) => (
+            <NavLink key={i} link={link} />
           ))}
         </div>
 
@@ -49,11 +49,11 @@ const Navbar: React.FC<{}> = () => {
 
         {/* Links dropdown from hamburger menu */}
         {toggle && (
-          <div className="links-dropdown absolute grid justify-center right-4 -bottom-96 bg-gray-700 w-60 h-96 rounded-xl transition-transform">
-            {links.map((link) => (
-              <NavLink link={link} className="links sm:flex hidden" />
-            ))}
-          </div>
+            <div className="menu-dropdown absolute grid justify-center right-4 -bottom-40 bg-gray-700 w-48 py-4 rounded-xl sm:hidden ease-in-out duration-500">
+              {links.map((link, i) => (
+                <NavLink key={i} link={link} />
+              ))}
+            </div>
         )}
       </div>
     </nav>
