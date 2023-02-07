@@ -1,4 +1,6 @@
-let links = [
+import { LinkProps } from "../../interfaces";
+
+const menuLinks: LinkProps[] = [
   {
     name: "Home",
     href: "/home",
@@ -13,4 +15,4 @@ let links = [
   },
 ];
 
-export default links;
+export default menuLinks;

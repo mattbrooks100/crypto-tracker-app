@@ -1,14 +1,6 @@
-type LinkProps = {
-  name: string,
-  href: string
-}
+import { NavLinkProps } from "../../interfaces";
 
-type Props = {
-  link: LinkProps,
-  className?: string,
-}
-
-const NavLink = ({ link }: Props) => {
+const NavLink = ({ link }: NavLinkProps) => {
   return (
     <li
       key={link.href}

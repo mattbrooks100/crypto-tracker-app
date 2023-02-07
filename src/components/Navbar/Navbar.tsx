@@ -1,20 +1,9 @@
 import Logo from "../../assets/btc_cat_logo.png";
-import links from "./links";
 import { HiMenu } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 import { useState } from "react";
+import menuLinks from "./menuLinks";
 import NavLink from "./NavLink";
-
-// const linksList = () => {
-//   return links.map((link) => (
-//     <li
-//       key={link.href}
-//       className="link list-none text-xl px-4 py-2 cursor-pointer hover:text-secondary duration-500"
-//     >
-//       <a href={link.href}>{link.name}</a>
-//     </li>
-//   ));
-// };
 
 const Navbar: React.FC<{}> = () => {
   const [toggle, setToggle] = useState(false);
@@ -32,7 +21,7 @@ const Navbar: React.FC<{}> = () => {
 
         {/* Navbar Links (expanded) */}
         <div className="sm:flex hidden">
-          {links.map((link, i) => (
+          {menuLinks.map((link, i) => (
             <NavLink key={i} link={link} />
           ))}
         </div>
@@ -49,11 +38,11 @@ const Navbar: React.FC<{}> = () => {
 
         {/* Links dropdown from hamburger menu */}
         {toggle && (
-            <div className="menu-dropdown absolute grid justify-center right-4 -bottom-40 bg-gray-700 w-48 py-4 rounded-xl sm:hidden ease-in-out duration-500">
-              {links.map((link, i) => (
-                <NavLink key={i} link={link} />
-              ))}
-            </div>
+          <div className="menu-dropdown absolute grid justify-center right-4 -bottom-40 bg-gray-700 w-48 py-4 rounded-xl sm:hidden ease-in-out duration-500">
+            {menuLinks.map((link, i) => (
+              <NavLink key={i} link={link} />
+            ))}
+          </div>
         )}
       </div>
     </nav>
