@@ -9,7 +9,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="navbar flex justify-center w-full">
+    <nav className="navbar justify-center w-full">
       <div className="navbar-container relative flex justify-between items-center w-full max-w-screen-xl py-2">
         {/* Navbar Logo */}
         <div className="logo flex gap-2 pl-4 text-4xl items-center">
@@ -35,16 +35,18 @@ const Navbar = () => {
             {toggle ? <IoMdClose size={40} /> : <HiMenu size={40} />}
           </button>
         </div>
-
-        {/* Mobile menu with navbar links (smaller screens) */}
-        {toggle && (
-          <div className="mobile-menu animate-[growDown_1s_ease_forwards] text-4xl absolute top-[76px] flex flex-col justify-center gap-16 z-99 h-[calc(100vh-76px)] w-screen bg-black opacity-95 sm:hidden">
-            {navLinks.map((link, i) => (
-              <NavLink key={i} link={link} />
-            ))}
-          </div>
-        )}
       </div>
+
+      {/* Mobile menu with navbar links (smaller screens) */}
+      {toggle && (
+        <div className="mobile-menu flex flex-col text-4xl top-[76px] justify-center gap-16 z-99 h-[500px] w-screen bg-black sm:hidden">
+            {/* animate-[growDown_0.3s_ease_forwards] */}
+            {/* h-[calc(100vh-76px)] */}
+          {navLinks.map((link, i) => (
+            <NavLink key={i} link={link} />
+          ))}
+        </div>
+      )}
     </nav>
   );
 };

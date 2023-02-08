@@ -1,18 +1,25 @@
 import Typed from "react-typed";
+import CryptoIcons from "../../assets/crypto_icons.png";
+import HeroCrypto from "../../assets/hero_crypto.jpeg";
 
 const Hero = () => {
   return (
-    <div className="flex justify-center items-center w-full h-60">
-      <div className="flex flex-col items-center text-center text-3xl px-4">
-        <p>Your source for the latest market data on</p>
-        <div className="text-4xl font-bold tracking-wide text-secondary">
-          <Typed
-            strings={["Bitcoin", "Ethereum", "Cardano", "Solana", "Over 1,000 Cryptocurrencies"]}
-            typeSpeed={50}
-            backSpeed={70}
-            backDelay={2000}
-            loop
-          />
+    <div className="flex justify-center items-center w-full">
+      <div className="flex flex-col sm:flex-row items-center text-center text-3xl px-4">
+        <div className="hero-text mt-16 sm:mt-0">
+          <p>Your source for the latest market data on</p>
+          <div className="mt-4 text-5xl font-bold tracking-wide text-secondary">
+            <Typed
+              strings={["Bitcoin", "Ethereum", "Cardano", "Solana", "Tether"]}
+              typeSpeed={50}
+              backSpeed={70}
+              backDelay={2000}
+              loop
+            />
+          </div>
+        </div>
+        <div className="hero-image">
+          <img src={HeroCrypto} className="w-[480px]"/>
         </div>
       </div>
     </div>
