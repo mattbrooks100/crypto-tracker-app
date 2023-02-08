@@ -1,6 +1,6 @@
 import { LinkProps } from "../../interfaces";
 
-const menuLinks: LinkProps[] = [
+const navLinks: LinkProps[] = [
   {
     name: "Home",
     href: "/home",
@@ -15,4 +15,4 @@ const menuLinks: LinkProps[] = [
   },
 ];
 
-export default menuLinks;
+export default navLinks;
