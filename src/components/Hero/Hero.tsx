@@ -5,8 +5,8 @@ import HeroCrypto from "../../assets/hero_crypto.jpeg";
 const Hero = () => {
   return (
     <div className="flex justify-center items-center w-full">
-      <div className="flex flex-col sm:flex-row items-center text-center text-3xl px-4">
-        <div className="hero-text mt-16 sm:mt-0">
+      <div className="flex flex-col sm:flex-row justify-center items-center text-center w-full max-w-screen-xl text-3xl gap-16 px-8">
+        <div className="hero-text mt-16 sm:mt-0 max-w-[400px]">
           <p>Your source for the latest market data on</p>
           <div className="mt-4 text-5xl font-bold tracking-wide text-secondary">
             <Typed

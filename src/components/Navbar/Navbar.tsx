@@ -9,7 +9,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="navbar justify-center w-full">
+    <nav className="navbar flex flex-col items-center justify-center w-full">
       <div className="navbar-container relative flex justify-between items-center w-full max-w-screen-xl py-2">
         {/* Navbar Logo */}
         <div className="logo flex gap-2 pl-4 text-4xl items-center">
