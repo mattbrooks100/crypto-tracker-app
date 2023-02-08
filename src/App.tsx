@@ -1,6 +1,8 @@
-import Footer from "./components/Footer/Footer";
-import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
+import Hero from "./components/Hero/Hero";
+import Body from "./components/Body/Body";
+import Footer from "./components/Footer/Footer";
+
 import { useRecoilState } from "recoil";
 import coinState from "./coinState";
 import { useEffect } from "react";
@@ -10,18 +12,20 @@ const App = () => {
   const [coinData, setCoinData] = useRecoilState(coinState);
 
   useEffect(() => {
-    axios("https://api.coincap.io/v2/assets").then((res) => {
-      const data = res.data;
-      setCoinData(data);
-      console.log(data);
-    });
+    const fetchData = async () => {
+      const res = await axios("https://api.coincap.io/v2/assets");
+      const dataArray = res.data.data;
+      setCoinData(dataArray);
+      console.log(dataArray);
+    };
+    fetchData();
   }, []);
 
   return (
     <div className="App bg-primary text-white w-screen h-screen overflow-hidden font-poppins">
       <Navbar />
       <Hero />
-      <div className="body bg-white text-black text-3xl font-bold h-80">Body</div>
+      <Body />
       <Footer />
     </div>
   );
