@@ -1,7 +1,7 @@
 const Footer = () => {
     return ( 
         <>
-        <div className="Footer">Footer</div>
+        <div className="footer flex bg-primary justify-center">&copy; 2023</div>
         </>
      );
 }

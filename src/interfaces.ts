@@ -24,7 +24,7 @@ export interface CoinProps {
 }
 
 export interface CoinCardProps {
-  key: string;
+  key: number;
   coin: CoinProps;
   className?: string;
 }

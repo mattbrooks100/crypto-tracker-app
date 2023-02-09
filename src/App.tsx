@@ -16,13 +16,12 @@ const App = () => {
       const res = await axios("https://api.coincap.io/v2/assets");
       const dataArray = res.data.data;
       setCoinData(dataArray);
-      console.log(dataArray);
     };
     fetchData();
   }, []);
 
   return (
-    <div className="App bg-primary text-white w-screen h-screen overflow-hidden font-poppins">
+    <div className="App bg-primary text-white w-screen h-screen font-poppins">
       <Navbar />
       <Hero />
       <Body />
