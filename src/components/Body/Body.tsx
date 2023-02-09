@@ -9,7 +9,7 @@ const Body = () => {
     <div className="w-full bg-gray-100 text-black flex justify-center">
       <div className="body flex flex-wrap justify-center max-w-screen-xl">
         {coinData.map((coin, i) => (
-          <CoinCard key={i} coin={coin} className="" />
+          <CoinCard key={i} coin={coin} />
         ))}
       </div>
     </div>
