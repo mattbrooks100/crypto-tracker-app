@@ -26,5 +26,12 @@ export interface CoinProps {
 export interface CoinCardProps {
   key: number;
   coin: CoinProps;
+  icon: boolean;
   className?: string;
+}
+
+export interface IconArrayItemProps {
+  symbol: string;
+  name: string;
+  color: string;
 }

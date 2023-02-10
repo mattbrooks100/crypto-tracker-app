@@ -1,11 +1,8 @@
-import { useRecoilState } from "recoil";
-import coinState from "../../coinState";
 import { CoinCardProps } from "../../interfaces";
 import priceFormatter from "./priceFormatter";
 import negativePrice from "./negativePrice";
 
-const CoinCard = ({ coin }: CoinCardProps) => {
-  const [coinData, setCoinData] = useRecoilState(coinState);
+const CoinCard = ({ coin, icon }: CoinCardProps) => {
   const changePrice = priceFormatter(Number(coin.changePercent24Hr));
 
   return (
@@ -14,7 +11,11 @@ const CoinCard = ({ coin }: CoinCardProps) => {
         {coin.rank}
       </div>
       <div className="mb-4">
-        <img src={`/assets/icon/${coin.symbol.toLowerCase()}.svg`} alt="token icon" width={50} />
+        {icon ? (
+          <img src={`/assets/icon/${coin.symbol.toLowerCase()}.svg`} alt="token icon" width={50} />
+        ) : (
+          <img src={`/assets/icon/generic.svg`} alt="token icon" width={50} />
+        )}
       </div>
       <div className="flex w-full justify-center items-center gap-4 font-semibold text-xl tracking-wide mb-4 mx-4">
         {coin.name} - {coin.symbol}
